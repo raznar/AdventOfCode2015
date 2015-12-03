@@ -12,16 +12,20 @@ public class OneDay
 	public static void partOne() throws FileNotFoundException {
 		Scanner console = new Scanner(new File("one_day_input.txt"));
 		String in = console.nextLine();
-		int countOpen = in.length() - in.replaceAll("\\)", "").length();
-		int countClosed = in.length() - in.replaceAll("\\(", "").length();
+		
+		//Gets the count of closed parentheses
+		int countClosed = in.length() - in.replaceAll("\\)", "").length();
+		//Gets the count of open parentheses
+		int countOpen = in.length() - in.replaceAll("\\(", "").length();
 
-		System.out.println(countOpen - countClosed);
+		System.out.println(countClosed - countOpen);
 		console.close();
 	}
 	
 	public static void partTwo() throws FileNotFoundException {
 		Scanner console = new Scanner(new File("one_day_input.txt"));
 		String in = console.nextLine();
+		
 		int length = in.length();
 		int floor = 0;
 		for (int i = 0; i < length; i++) {
